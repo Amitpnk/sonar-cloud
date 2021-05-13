@@ -1,5 +1,6 @@
 # sonar-cloud
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Amitpnk_sonar-cloud&metric=alert_status)](https://sonarcloud.io/dashboard?id=Amitpnk_sonar-cloud)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Amitpnk_sonar-cloud&metric=bugs)](https://sonarcloud.io/dashboard?id=Amitpnk_sonar-cloud)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Amitpnk_sonar-cloud&metric=code_smells)](https://sonarcloud.io/dashboard?id=Amitpnk_sonar-cloud)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Amitpnk_sonar-cloud&metric=coverage)](https://sonarcloud.io/dashboard?id=Amitpnk_sonar-cloud)
