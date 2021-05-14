@@ -45,3 +45,12 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"Amitpnk_sonar-cloud" /o:"amitpnk" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build Refactoring.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+      - name: Run unit test
+        run: dotnet test Refactoring.sln --logger:"html;LogFileName=logFile.html"
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v2-preview
+        id: upload_artifact
+        with:
+          path: SonarCloud/UnitTest.SonarCloud/TestResults/logFile.html
+          name: TestReport
