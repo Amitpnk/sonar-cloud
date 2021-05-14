@@ -46,11 +46,11 @@ jobs:
           dotnet build Refactoring.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
       - name: Run unit test
-        run: dotnet test Refactoring.sln --logger:"html;LogFileName=logFile.html"
+        run: dotnet test Refactoring.sln --logger:"trx;LogFileName=logFile.trx" -r TestResult
       - name: Upload test report
         if: always()
         uses: actions/upload-artifact@v2-preview
         id: upload_artifact
         with:
-          path: test/Refactoring.UnitTest/TestResults/logFile.html
+          path: TestResult/logFile.trx
           name: TestReport
