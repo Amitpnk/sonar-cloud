@@ -52,5 +52,5 @@ jobs:
         uses: actions/upload-artifact@v2-preview
         id: upload_artifact
         with:
-          path: test\Refactoring.UnitTest\TestResult\coverage\coverage.opencover.xml
+          path: test/Refactoring.UnitTest/TestResult/coverage/coverage.opencover.xml
           name: TestReport
