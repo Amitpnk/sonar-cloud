@@ -5,7 +5,7 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   
-  <ProjectGuid>{181eab94-7e4e-4d45-8db7-7030efd1a50b}</ProjectGuid>
+  
 
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.13.2" />
