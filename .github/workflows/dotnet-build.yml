@@ -47,13 +47,6 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
       - name: Run unit test
         run: dotnet test Refactoring.sln --logger:"trx;LogFileName=logFile.trx" -r TestResult /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=TestResult/coverage/ /p:MergeWith=TestResult/coverage/ --collect "Code coverage"
-      - name: Upload test report
-        if: always()
-        uses: actions/upload-artifact@v2-preview
-        id: upload_artifact
-        with:
-          path: test\Refactoring.UnitTest\TestResult\coverage\coverage.opencover.xml
-          name: coverage.opencover.xml
       - name: Upload test trx report
         if: always()
         uses: actions/upload-artifact@v2-preview
