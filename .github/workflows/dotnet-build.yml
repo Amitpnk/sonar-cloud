@@ -52,5 +52,5 @@ jobs:
         uses: actions/upload-artifact@v2-preview
         id: upload_artifact
         with:
-          path: SonarCloud/UnitTest.SonarCloud/TestResults/logFile.html
+          path: test/Refactoring.UnitTest/TestResults/logFile.html
           name: TestReport
