@@ -52,5 +52,12 @@ jobs:
         uses: actions/upload-artifact@v2-preview
         id: upload_artifact
         with:
-          path: test/Refactoring.UnitTest/TestResult/coverage/coverage.opencover.xml
-          name: TestReport
+          path: test\Refactoring.UnitTest\TestResult\coverage\coverage.opencover.xml
+          name: coverage.opencover.xml
+      - name: Upload test trx report
+        if: always()
+        uses: actions/upload-artifact@v2-preview
+        id: upload_artifact
+        with:
+          path: TestResult\logFile.trx
+          name: logFile.trx
