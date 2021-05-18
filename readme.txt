@@ -1,0 +1,1 @@
+https://sonarcloud.io/documentation/analysis/scan/sonarscanner-for-msbuild/#code-coverage
