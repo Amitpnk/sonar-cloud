@@ -44,13 +44,14 @@ jobs:
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"Amitpnk_sonar-cloud" /o:"amitpnk" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build Refactoring.sln
+          dotnet test Refactoring.sln --collect "Code Coverage" --logger trx --results-directory "TestsResults"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
-      - name: Run unit test
-        run: dotnet test Refactoring.sln --logger:"trx;LogFileName=logFile.trx" -r TestResult /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=TestResult/coverage/ /p:MergeWith=TestResult/coverage/ --collect "Code coverage"
-      - name: Upload test trx report
-        if: always()
-        uses: actions/upload-artifact@v2-preview
-        id: upload_artifact
-        with:
-          path: .\TestResult\logFile.trx # path: .\test\Refactoring.UnitTest\TestResult\coverage\coverage.opencover.xml
-          name: coverage.opencover
+      # - name: Run unit test
+      #   run: dotnet test Refactoring.sln --logger:"trx;LogFileName=logFile.trx" -r TestResult /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=TestResult/coverage/ /p:MergeWith=TestResult/coverage/ --collect "Code coverage"
+      # - name: Upload test trx report
+      #   if: always()
+      #   uses: actions/upload-artifact@v2-preview
+      #   id: upload_artifact
+      #   with:
+      #     path: .\TestResult\logFile.trx # path: .\test\Refactoring.UnitTest\TestResult\coverage\coverage.opencover.xml
+      #     name: coverage.opencover
