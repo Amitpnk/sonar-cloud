@@ -58,6 +58,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Amitpnk_sonar-cloud" /o:"amitpnk" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="Refactoring.UnitTest\TestResults\*\coverage.opencover.xml"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Amitpnk_sonar-cloud" /o:"amitpnk" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="test\Refactoring.UnitTest\TestResults\*\coverage.opencover.xml"
           dotnet build Refactoring.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
