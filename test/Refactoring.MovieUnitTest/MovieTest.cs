@@ -1,15 +1,11 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NUnit.Framework;
+using Refactoring.Movies;
 
-namespace Refactoring.UnitTest
+namespace Refactoring.MovieUnitTest
 {
     public class MovieTest
     {
-         
+
         [Test]
         public void getMovieTitle()
         {
@@ -32,6 +28,6 @@ namespace Refactoring.UnitTest
             Assert.AreEqual(200, movie.GetPriceCode());
         }
 
-        
+
     }
 }

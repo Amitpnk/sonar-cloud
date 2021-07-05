@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Refactoring.Movies;
 
 namespace Refactoring.UnitTest
 {

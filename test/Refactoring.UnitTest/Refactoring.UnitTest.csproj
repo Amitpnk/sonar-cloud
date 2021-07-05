@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Refactoring.Movie\Refactoring.Movie.csproj" />
     <ProjectReference Include="..\..\src\Refactoring\Refactoring.csproj" />
   </ItemGroup>
 
